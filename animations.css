@@ -1,0 +1,67 @@
+@keyframes bad1_move {
+  0% {
+    transform: translate(150%, -20%);
+  }
+  15% {
+    transform: translate(150%, 0%);
+  }
+  100% {
+    transform: translate(800%, 0);
+  }
+}
+.bad1_move {
+  animation-name: bad1_move;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes good1_move {
+  0% {
+    transform: translate(300%, -20%);
+  }
+  15% {
+    transform: translate(300%, 0%);
+  }
+  100% {
+    transform: translate(-900%, 0);
+  }
+}
+.good1_move {
+  animation-name: good1_move;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+/* @keyframes good2_move {
+  0% {
+    transform: translate(250%, -20%);
+  }
+  15% {
+    transform: translate(250%, 0%);
+  }
+  100% {
+    transform: translate(1100%, 0%);
+  }
+}
+.civilian2 {
+  animation-name: civilian2_walk;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+} */
+@keyframes rotate {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+.rotate {
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  transform-origin: bottom;
+}
+.paused {
+  animation-play-state: paused;
+}

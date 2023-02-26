@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clicker-Clown-Spil</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animations.css" />
+  </head>
+  <body>
+    <div id="screen">
+      <div id="game">
+        <div id="game_background"></div>
+        <div id="game_elements">
+          <div id="bad1_container" class="">
+            <img id="bad1_sprite" src="Billleder/bad.png" />
+          </div>
+          <div id="good1_container" class="">
+            <img id="good1_sprite" src="Billleder/clown.png" />
+          </div>
+
+          <div></div>
+
+          <div id="game_ui">
+            <div id="score_board">
+              <span id="bad_count">0</span>
+              <img id="bad1_image" src="Billleder/clown (2).png" />
+            </div>
+            <div id="life_board">
+              <img id="heart1" src="Billleder/heart.svg" class="active_heart" />
+              <img id="heart2" src="Billleder/heart.svg" class="active_heart" />
+              <img id="heart3" src="Billleder/heart.svg" class="active_heart" />
+            </div>
+          </div>
+          <div id="time_board">
+            <div id="time_board_container">
+              <!-- <img
+                id="time_board_sprite"
+                src="images/png/Main_UI/Clock_Icon.png"
+              /> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="start"></div>
+      <div id="game_over" class="hidden"><h1>GAME OVER🪦</h1></div>
+      <div id="level_complete" class="hidden">
+        <h1>
+          <p id="levelCompleteMessage"></p>
+        </h1>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

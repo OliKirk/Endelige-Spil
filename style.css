@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+}
+img {
+  width: 100%;
+}
+#screen {
+  aspect-ratio: 16/9;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+}
+#game {
+  grid-area: 1 / 1;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 10% / 10%;
+  grid-template-rows: 100%;
+}
+#game_background {
+  grid-area: 1 / 1;
+  background-image: url(Billleder/1541.jpg);
+  background-size: cover;
+}
+#game_elements {
+  grid-area: 1 / 1;
+  position: relative;
+  overflow: hidden;
+}
+#bad1_container {
+  width: 7%;
+  position: absolute;
+  bottom: 10%;
+  left: 45%;
+}
+#good1_container {
+  width: 6%;
+  position: absolute;
+  bottom: 8%;
+  left: 37%;
+}
+
+#game_ui {
+  grid-area: 1 / 1;
+  position: relative;
+  font-size: 4em;
+  font-family: sans-serif;
+  color: black;
+}
+
+#life_board {
+  margin-block-start: 0.2em;
+  display: grid;
+  grid-template-columns: 1em 1em 1em;
+}
+
+#life_board img {
+  width: 100%;
+}
+#heart_container {
+  position: absolute;
+
+  top: 0;
+  left: 55vw;
+}
+#heart_sprite {
+  width: 100%;
+}
+#score_board {
+  width: 12%;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  font-size: 1em;
+}
+#bad_count {
+  white-space: nowrap;
+  text-align: right;
+}
+#bad_image {
+  width: 1em;
+}
+/* #time_board {
+  width: 5%;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+} */
+.active_heart {
+  filter: drop-shadow(0 0 2px yellow);
+}
+
+.broken_heart {
+  filter: grayscale(75%) blur(0.5px);
+}
+#game_over {
+  grid-area: 1 /1;
+  z-index: 999;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-image: linear-gradient(150deg, #c90303 0%, #790909 100%);
+  color: #ffffff;
+}
+#level_complete {
+  grid-area: 1 /1;
+  z-index: 999;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-image: linear-gradient(150deg, #20c903 0%, #09793b 100%);
+  color: #ffffff;
+}
+.hidden,
+#game_over.hidden,
+#level_complete.hidden {
+  display: none;
+}
