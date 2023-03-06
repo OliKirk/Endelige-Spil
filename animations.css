@@ -239,7 +239,7 @@
 
 .shrink {
   animation-name: shrink_kf;
-  animation-duration: 45s;
+  animation-duration: 35s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-fill-mode: forwards;

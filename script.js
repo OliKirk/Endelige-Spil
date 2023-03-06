@@ -196,7 +196,7 @@ function incrementPoints() {
 // hvor mange point man skal hvae for at vinde
 function displayPoints() {
   document.querySelector("#bad_count").textContent = points;
-  if (points > 2) {
+  if (points > 25) {
     levelComplete();
   }
 }

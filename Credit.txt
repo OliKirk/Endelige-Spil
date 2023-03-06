@@ -3,3 +3,15 @@ background: <a href="https://www.freepik.com/free-vector/magician-with-wand-woma
 Bad Clown: <a href="https://www.flaticon.com/free-icons/clown" title="clown icons">Clown icons created by Zlatko Najdenovski - Flaticon</a>
 
 Good Clown: <a href="https://www.flaticon.com/free-icons/joker" title="joker icons">Joker icons created by Zlatko Najdenovski - Flaticon</a>
+
+background Music: Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=6264">Pixabay</a>
+
+Good Clown Sound: Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=6008">Pixabay</a>
+
+Bad Clown Sound: Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=6033">Pixabay</a>
+
+Game Over: Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=7184">Pixabay</a>
+
+Levle Complete: 
+
+background Music:
