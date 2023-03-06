@@ -201,19 +201,19 @@ p {
 
 /* Speed classes */
 .speed1 {
-  animation-duration: 1.5s;
-}
-.speed2 {
   animation-duration: 2s;
 }
-.speed3 {
+.speed2 {
   animation-duration: 2.5s;
 }
-.speed4 {
+.speed3 {
   animation-duration: 3s;
 }
+.speed4 {
+  animation-duration: 3.5s;
+}
 .speed5 {
-  animation-duration: 3s;
+  animation-duration: 4s;
 }
 
 #game_over {

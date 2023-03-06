@@ -1,0 +1,5 @@
+background: <a href="https://www.freepik.com/free-vector/magician-with-wand-woman-circus-arena_7588822.htm#page=3&query=circus&position=26&from_view=search&track=sph">Image by upklyak</a> on Freepik
+
+Bad Clown: <a href="https://www.flaticon.com/free-icons/clown" title="clown icons">Clown icons created by Zlatko Najdenovski - Flaticon</a>
+
+Good Clown: <a href="https://www.flaticon.com/free-icons/joker" title="joker icons">Joker icons created by Zlatko Najdenovski - Flaticon</a>
