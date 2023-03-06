@@ -16,42 +16,74 @@
           <div id="bad1_container" class="">
             <img id="bad1_sprite" src="Billleder/bad.png" />
           </div>
+          <div id="bad2_container" class="">
+            <img id="bad2_sprite" src="Billleder/bad.png" />
+          </div>
+          <div id="bad3_container" class="">
+            <img id="bad3_sprite" src="Billleder/bad.png" />
+          </div>
+          <div id="bad4_container" class="">
+            <img id="bad4_sprite" src="Billleder/bad.png" />
+          </div>
+          <div id="bad5_container" class="">
+            <img id="bad5_sprite" src="Billleder/bad.png" />
+          </div>
+
           <div id="good1_container" class="">
             <img id="good1_sprite" src="Billleder/clown.png" />
           </div>
-
-          <div></div>
-
-          <div id="game_ui">
-            <div id="score_board">
-              <span id="bad_count">0</span>
-              <img id="bad1_image" src="Billleder/clown (2).png" />
-            </div>
-            <div id="life_board">
-              <img id="heart1" src="Billleder/heart.svg" class="active_heart" />
-              <img id="heart2" src="Billleder/heart.svg" class="active_heart" />
-              <img id="heart3" src="Billleder/heart.svg" class="active_heart" />
-            </div>
+          <div id="good2_container" class="">
+            <img id="good2_sprite" src="Billleder/clown.png" />
+          </div>
+          <div id="good3_container" class="">
+            <img id="good3_sprite" src="Billleder/clown.png" />
+          </div>
+          <div id="good4_container" class="">
+            <img id="good4_sprite" src="Billleder/clown.png" />
+          </div>
+          <div id="good5_container" class="">
+            <img id="good5_sprite" src="Billleder/clown.png" />
+          </div>
+        </div>
+        <div id="game_ui">
+          <div id="score_board">
+            <span id="bad_count">0</span>
+            <img id="bad1_image" src="Billleder/bad.png" />
+          </div>
+          <div id="life_board">
+            <img id="heart1" src="Billleder/heart.svg" class="active_heart" />
+            <img id="heart2" src="Billleder/heart.svg" class="active_heart" />
+            <img id="heart3" src="Billleder/heart.svg" class="active_heart" />
           </div>
           <div id="time_board">
-            <div id="time_board_container">
-              <!-- <img
-                id="time_board_sprite"
-                src="images/png/Main_UI/Clock_Icon.png"
-              /> -->
+            <div id="time_container">
+              <img id="time_sprite" />
             </div>
           </div>
         </div>
       </div>
+      <div id="start">
+        <h2>Kill Clown Clicker Game 🤡</h2>
+        <p>Kill as many bad clowns before the time runs out</p>
+        <button id="btn_start" class="pulse">Start</button>
+      </div>
 
-      <div id="start"></div>
-      <div id="game_over" class="hidden"><h1>GAME OVER🪦</h1></div>
+      <div id="game_over" class="hidden">
+        <h2>GAME OVER🪦</h2>
+        <button id="btn_restart" class="pulse">Retry</button>
+      </div>
+
       <div id="level_complete" class="hidden">
-        <h1>
-          <p id="levelCompleteMessage"></p>
-        </h1>
+        <h2><p id="levelCompleteMessage"></p></h2>
+        <button id="btn_go_to_start" class="pulse">Go to start</button>
       </div>
     </div>
+    <audio id="sound_bomb" src="sounds\bomb.mp3"></audio>
+    <audio id="sound_coin" src="sounds\coin.mp3"></audio>
+    <audio id="sound_dreams" src="sounds\dreams.mp3"></audio>
+    <audio id="sound_gameOver" src="sounds\gameOver.mp3"></audio>
+    <audio id="sound_tada" src="sounds\tada.mp3"></audio>
+    <audio id="sound_heart" src="sounds\shortSuccess.mp3"></audio>
     <script src="script.js"></script>
   </body>
 </html>

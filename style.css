@@ -1,8 +1,20 @@
 body {
   margin: 0;
+  user-select: none;
 }
 img {
   width: 100%;
+}
+
+h2 {
+  font-size: 4em;
+  margin: 0;
+}
+
+p {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 1em 0 1.5em;
 }
 #screen {
   aspect-ratio: 16/9;
@@ -17,6 +29,7 @@ img {
   display: grid;
   grid-template-columns: 10% / 10%;
   grid-template-rows: 100%;
+  z-index: 999;
 }
 #game_background {
   grid-area: 1 / 1;
@@ -32,18 +45,69 @@ img {
   width: 7%;
   position: absolute;
   bottom: 10%;
-  left: 45%;
+  left: 52%;
+}
+#bad2_container {
+  width: 7%;
+  position: absolute;
+  bottom: 10%;
+  left: 52%;
+}
+#bad3_container {
+  width: 6%;
+  position: absolute;
+  bottom: 10%;
+  left: 42%;
+}
+#bad4_container {
+  width: 6%;
+  position: absolute;
+  bottom: 10%;
+  left: 42%;
+}
+#bad5_container {
+  width: 7%;
+  position: absolute;
+  bottom: 10%;
+  left: 52%;
 }
 #good1_container {
   width: 6%;
   position: absolute;
-  bottom: 8%;
-  left: 37%;
+  bottom: 10%;
+  left: 42%;
+}
+
+#good2_container {
+  width: 6%;
+  position: absolute;
+  bottom: 10%;
+  left: 42%;
+}
+
+#good3_container {
+  width: 7%;
+  position: absolute;
+  bottom: 10%;
+  left: 52%;
+}
+
+#good4_container {
+  width: 7%;
+  position: absolute;
+  bottom: 10%;
+  left: 52%;
+}
+
+#good5_container {
+  width: 6%;
+  position: absolute;
+  bottom: 10%;
+  left: 42%;
 }
 
 #game_ui {
   grid-area: 1 / 1;
-  position: relative;
   font-size: 4em;
   font-family: sans-serif;
   color: black;
@@ -58,6 +122,7 @@ img {
 #life_board img {
   width: 100%;
 }
+
 #heart_container {
   position: absolute;
 
@@ -74,7 +139,7 @@ img {
   right: 0%;
   display: grid;
   grid-template-columns: 2fr 1.5fr;
-  font-size: 1em;
+  font-size: 5vw;
 }
 #bad_count {
   white-space: nowrap;
@@ -83,12 +148,32 @@ img {
 #bad_image {
   width: 1em;
 }
-/* #time_board {
-  width: 5%;
+/* Timer */
+
+#time_board {
+  position: relative;
+}
+
+#time_container {
   position: absolute;
-  top: 0%;
-  right: 0%;
-} */
+  width: 10%;
+  aspect-ratio: 30/6;
+  border: 2px solid black;
+  background-color: rgba(208, 204, 204, 0.383);
+  top: 4vh;
+  right: 0.2vw;
+  z-index: 999;
+}
+
+#time_sprite {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: limegreen;
+  transform-origin: right;
+}
+
+/*Hjerter / liv */
 .active_heart {
   filter: drop-shadow(0 0 2px yellow);
 }
@@ -96,6 +181,41 @@ img {
 .broken_heart {
   filter: grayscale(75%) blur(0.5px);
 }
+
+/* position classes */
+.position1 {
+  left: -10vw;
+}
+
+.position2 {
+  left: 110vw;
+}
+
+.position3 {
+  left: -10vw;
+}
+
+.position4 {
+  left: 110vw;
+}
+
+.speed1 {
+  animation-duration: 1.5s;
+}
+
+.speed2 {
+  animation-duration: 2s;
+}
+.speed3 {
+  animation-duration: 2.5s;
+}
+.speed4 {
+  animation-duration: 3s;
+}
+.speed5 {
+  animation-duration: 3s;
+}
+
 #game_over {
   grid-area: 1 /1;
   z-index: 999;
@@ -111,11 +231,36 @@ img {
   display: grid;
   justify-content: center;
   align-content: center;
+  /*background-image: url(Billleder/lvl.jpg);*/
   background-image: linear-gradient(150deg, #20c903 0%, #09793b 100%);
   color: #ffffff;
 }
+#start {
+  grid-area: 1 /1;
+  z-index: 999;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  /*background-image: url(Billleder/1259.jpg);*/
+  background-image: linear-gradient(150deg, #d90724 0%, #4b0812 100%);
+  color: #ffffff;
+}
+
 .hidden,
 #game_over.hidden,
-#level_complete.hidden {
+#level_complete.hidden,
+#game.hidden,
+#start.hidden {
   display: none;
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: 2em;
+  margin: auto;
+  background-color: #cf0524;
+  color: #ffff;
+  border: 10px solid #cf1532;
+  cursor: pointer;
+  border-radius: 10px;
 }
