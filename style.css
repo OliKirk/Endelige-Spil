@@ -199,10 +199,10 @@ p {
   left: 110vw;
 }
 
+/* Speed classes */
 .speed1 {
   animation-duration: 1.5s;
 }
-
 .speed2 {
   animation-duration: 2s;
 }

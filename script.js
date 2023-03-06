@@ -6,8 +6,8 @@ let lives = 3;
 
 function ready() {
   console.log("JavaScript ready!");
-  document.querySelector("#btn_start").addEventListener("click", startTransition);
-  document.querySelector("#btn_restart").addEventListener("click", retryGame);
+  document.querySelector("#btn_start").addEventListener("click", startGame);
+  document.querySelector("#btn_restart").addEventListener("click", startGame);
   document.querySelector("#btn_go_to_start").addEventListener("click", showStartScreen);
 }
 
@@ -21,11 +21,13 @@ function startGame() {
   // showGameScreen();
   addPosition();
   addSpeed();
+  // skjul start sklærm
+  document.querySelector("#start").classList.add("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
 
-  document.querySelector("#btn_start").addEventListener("mousedown", startGame);
-
-  //skjul startskærm
-  // document.querySelector("#start").classList.add("hidden");
+  //animation
+  document.querySelector("#game").classList.add("zoom_in");
   //baggrundslyd når spillet starter
   document.querySelector("#sound_dreams").play();
   // start alle animationer
@@ -57,6 +59,14 @@ function startGame() {
   document.querySelector("#bad3_container").addEventListener("animationiteration", clownRestart);
   document.querySelector("#bad4_container").addEventListener("animationiteration", clownRestart);
   document.querySelector("#bad5_container").addEventListener("animationiteration", clownRestart);
+}
+
+function showStartScreen() {
+  resetLives();
+  document.querySelector("#start").classList.remove("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
+  document.querySelector("#start").classList.add("zoom_in");
 }
 
 function startAllAnimations() {
@@ -142,38 +152,6 @@ function dieBad() {
   document.querySelector("#sound_coin").currentTime = 0;
   document.querySelector("#sound_coin").play();
 }
-function incrementPoints() {
-  points++;
-  displayPoints();
-}
-function displayPoints() {
-  document.querySelector("#bad_count").textContent = points;
-  if (points >= 1) {
-    levelComplete();
-  }
-}
-function decrementPoints() {
-  points--;
-  displayPoints();
-}
-
-function clownRestart() {
-  console.log("clown restart");
-  let clown = this;
-  // genstart move animation
-  clown.classList.remove("move");
-  clown.offsetWidth;
-  clown.classList.add("move");
-  //fjern alle speed
-  clown.classList.remove("speed1", "speed2", "speed3", "speed4", "speed5");
-  let speed = Math.floor(Math.random() * 4) + 1;
-  clown.classList.add("speed" + speed);
-  // fjern alle positioner
-  clown.classList.remove("position1", "position2", "position3", "position4");
-  // sæt position til en ny klasse
-  let p = Math.floor(Math.random() * 4) + 1;
-  clown.classList.add(`position${p}`);
-}
 
 function deadBad() {
   console.log("deadBad");
@@ -200,6 +178,50 @@ function dieGood() {
   document.querySelector("#sound_bomb").play();
 }
 
+function deadGood() {
+  console.log("deadGood");
+  let good = this;
+  good.removeEventListener("animationend", deadGood);
+  good.querySelector("img").classList.remove("rotatel");
+  good.classList.remove("paused");
+  clownRestart.call(this);
+  good.addEventListener("mousedown", dieGood);
+}
+
+function incrementPoints() {
+  points++;
+  displayPoints();
+}
+// hvor mange point man skal hvae for at vinde
+function displayPoints() {
+  document.querySelector("#bad_count").textContent = points;
+  if (points > 2) {
+    levelComplete();
+  }
+}
+function decrementPoints() {
+  points--;
+  displayPoints();
+}
+
+function clownRestart() {
+  console.log("clown restart");
+  let clown = this;
+  // genstart move animation
+  clown.classList.remove("move");
+  clown.offsetWidth;
+  clown.classList.add("move");
+  //fjern alle speed
+  clown.classList.remove("speed1", "speed2", "speed3", "speed4", "speed5");
+  let speed = Math.floor(Math.random() * 4) + 1;
+  clown.classList.add("speed" + speed);
+  // fjern alle positioner
+  clown.classList.remove("position1", "position2", "position3", "position4");
+  // sæt position til en ny klasse
+  let p = Math.floor(Math.random() * 4) + 1;
+  clown.classList.add(`position${p}`);
+}
+
 function decrementLives() {
   lives--;
   displayDecrementLives();
@@ -212,37 +234,6 @@ function displayDecrementLives() {
   console.log(`#heart${lives}`);
   document.querySelector(`#heart${lives + 1}`).classList.remove("active_heart");
   document.querySelector(`#heart${lives + 1}`).classList.add("broken_heart");
-}
-
-function deadGood() {
-  console.log("deadGood");
-  let good = this;
-  good.removeEventListener("animationend", deadGood);
-  good.querySelector("img").classList.remove("rotatel");
-  good.classList.remove("paused");
-  clownRestart.call(this);
-  good.addEventListener("mousedown", dieGood);
-}
-
-function levelComplete() {
-  document.querySelector("#level_complete").classList.remove("hidden");
-  document.querySelector("#levelCompleteMessage").textContent = `You killed ${points} Bad Clowns`;
-
-  end();
-  //restart timer stopGame();
-  //Gå tilbage til start
-  document.querySelector("#btn_go_to_start").addEventListener("click", showStartScreen);
-  //Lyd når man vinder spil
-  document.querySelector("#sound_tada").play();
-}
-
-function gameOver() {
-  console.log("game over");
-  document.querySelector("#game_over").classList.remove("hidden");
-  end();
-  //restart timer stopGame();
-  //Lyd når man taber spil
-  document.querySelector("#sound_gameOver").play();
 }
 
 function startTimer() {
@@ -261,6 +252,28 @@ function timeIsUp() {
   } else {
     gameOver();
   }
+}
+
+function levelComplete() {
+  document.querySelector("#level_complete").classList.remove("hidden");
+  document.querySelector("#sound_tada").play();
+  document.querySelector("#level_complete").classList.add("zoom_in");
+  document.querySelector("#levelCompleteMessage").textContent = `You killed ${points} Bad Clowns`;
+  end();
+  //restart timer stopGame();
+  //Gå tilbage til start
+  // document.querySelector("#btn_go_to_start").addEventListener("click", showStartScreen);
+  //Lyd når man vinder spil
+  document.querySelector("#sound_tada").play();
+}
+
+function gameOver() {
+  console.log("gameOver");
+  document.querySelector("#game_over").classList.remove("hidden");
+  document.querySelector("#game_over").classList.add("zoom_in");
+  //Lyd når man taber spil
+  document.querySelector("#sound_gameOver").play();
+  end();
 }
 
 function end() {
@@ -295,57 +308,5 @@ function end() {
   // nulstil timer - fjern animationen fra timeren (fjern klassen shrink fra time_sprite)
   document.querySelector("#time_sprite").classList.remove("shrink");
   //animation
+  document.querySelector("#game").classList.remove("zoom_in");
 }
-
-function showStartScreen() {
-  resetLives();
-  document.querySelector("#start").classList.add("transition1");
-  document.querySelector("#start").addEventListener("animitionend", transitionEnd1);
-  document.querySelector("#start").addEventListener("animationend", levelCompleteEnd);
-  document.querySelector("#start").classList.remove("hidden");
-  document.querySelector("#game_over").classList.add("hidden");
-  resetLives();
-}
-
-function startTransition() {
-  document.querySelector("#start").classList.add("transition");
-  document.querySelector("#start").addEventListener("animationend", transitionEnd);
-  document.querySelector("#game_over").classList.add("hidden");
-  document.querySelector("#level_complete").classList.add("hidden");
-
-  startGame();
-}
-
-function retryGame() {
-  document.querySelector("#game_over").classList.add("transition");
-  document.querySelector("#game_over").addEventListener("animationend", transitionEnd);
-  document.querySelector("#level_complete").classList.add("hidden");
-  resetLives();
-  resetPoints();
-  startGame();
-}
-
-function transitionEnd() {
-  this.removeEventListener("animationend", transitionEnd);
-  this.classList.remove("transition");
-  this.offsetWidth;
-  this.classList.add("hidden");
-}
-
-function transitionEnd1() {
-  this.removeEventListener("animationend", transitionEnd1);
-  this.classList.remove("transition1");
-  this.offsetWidth;
-  this.classList.add("hidden");
-}
-
-function levelCompleteEnd() {
-  document.querySelector("#level_complete").classList.add("hidden");
-  document.querySelector("#level_complete").removeEventListener("animationend", levelCompleteEnd);
-}
-/* 
-function stopGame() {
-  // nulstil timer - fjern animationen fra timeren (fjern klassen shrink fra time_sprite)
-  document.querySelector("#time_sprite").classList.remove("shrink");
-}
-*/
