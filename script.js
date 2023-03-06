@@ -25,7 +25,7 @@ function startGame() {
   document.querySelector("#btn_start").addEventListener("mousedown", startGame);
 
   //skjul startskærm
-  document.querySelector("#start").classList.add("hidden");
+  // document.querySelector("#start").classList.add("hidden");
   //baggrundslyd når spillet starter
   document.querySelector("#sound_dreams").play();
   // start alle animationer
@@ -304,7 +304,6 @@ function showStartScreen() {
   document.querySelector("#start").addEventListener("animationend", levelCompleteEnd);
   document.querySelector("#start").classList.remove("hidden");
   document.querySelector("#game_over").classList.add("hidden");
-  document.querySelector("#level_complete").classList.add("hidden");
   resetLives();
 }
 
@@ -313,6 +312,7 @@ function startTransition() {
   document.querySelector("#start").addEventListener("animationend", transitionEnd);
   document.querySelector("#game_over").classList.add("hidden");
   document.querySelector("#level_complete").classList.add("hidden");
+
   startGame();
 }
 
@@ -329,13 +329,14 @@ function transitionEnd() {
   this.removeEventListener("animationend", transitionEnd);
   this.classList.remove("transition");
   this.offsetWidth;
+  this.classList.add("hidden");
 }
 
 function transitionEnd1() {
   this.removeEventListener("animationend", transitionEnd1);
   this.classList.remove("transition1");
   this.offsetWidth;
-  // this.classList.add("hidden");
+  this.classList.add("hidden");
 }
 
 function levelCompleteEnd() {
