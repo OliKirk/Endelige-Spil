@@ -29,6 +29,7 @@ function startGame() {
   //animation
   document.querySelector("#game").classList.add("zoom_in");
   //baggrundslyd når spillet starter
+  document.querySelector("#sound_tada").pause();
   document.querySelector("#sound_dreams").play();
   // start alle animationer
   startAllAnimations();
@@ -256,15 +257,11 @@ function timeIsUp() {
 
 function levelComplete() {
   document.querySelector("#level_complete").classList.remove("hidden");
-  document.querySelector("#sound_tada").play();
   document.querySelector("#level_complete").classList.add("zoom_in");
   document.querySelector("#levelCompleteMessage").textContent = `You killed ${points} Bad Clowns`;
-  end();
-  //restart timer stopGame();
-  //Gå tilbage til start
-  // document.querySelector("#btn_go_to_start").addEventListener("click", showStartScreen);
   //Lyd når man vinder spil
   document.querySelector("#sound_tada").play();
+  end();
 }
 
 function gameOver() {
