@@ -231,8 +231,9 @@ p {
   display: grid;
   justify-content: center;
   align-content: center;
-  /*background-image: url(Billleder/lvl.jpg);*/
-  background-image: linear-gradient(150deg, #20c903 0%, #09793b 100%);
+  /* background-image: url(Billleder/lvl.jpg); */
+  background-image: linear-gradient(150deg, #95052e 0%, #09793b 100%);
+  background-size: cover;
   color: #ffffff;
 }
 #start {
@@ -241,9 +242,12 @@ p {
   display: grid;
   justify-content: center;
   align-content: center;
-  /*background-image: url(Billleder/1259.jpg);*/
-  background-image: linear-gradient(150deg, #d90724 0%, #4b0812 100%);
-  color: #ffffff;
+  background-image: url(Billleder/1259.jpg);
+  background-size: cover;
+  color: #ffff;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  /* background-image: linear-gradient(150deg, #d90724 0%, #4b0812 100%); */
+  /* color: #ffffff; */
 }
 
 .hidden,
