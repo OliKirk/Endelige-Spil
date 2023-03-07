@@ -196,7 +196,7 @@ function incrementPoints() {
 // hvor mange point man skal hvae for at vinde
 function displayPoints() {
   document.querySelector("#bad_count").textContent = points;
-  if (points > 25) {
+  if (points > 29) {
     levelComplete();
   }
 }
@@ -248,7 +248,7 @@ function startTimer() {
 function timeIsUp() {
   console.log("Tiden er gået!");
 
-  if (points >= 15) {
+  if (points >= 10) {
     levelComplete();
   } else {
     gameOver();
